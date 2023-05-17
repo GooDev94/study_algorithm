@@ -1,6 +1,4 @@
-package study_algorithm;
-
-
+package study_algorithm.data_structure;
 import java.util.Scanner;
 
 public class Baekjun_11720 {
