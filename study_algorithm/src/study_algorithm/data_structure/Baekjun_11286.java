@@ -1,24 +1,40 @@
 package study_algorithm.data_structure;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.PriorityQueue;
 
 public class Baekjun_11286 {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Scanner sc = new Scanner(System.in);
-		int N = sc.nextInt();
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		//절댓값 힙
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int N = Integer.parseInt(br.readLine());
+		PriorityQueue<Integer> MyQueue = new PriorityQueue<>((o1, o2) -> {
+			int first_abs = Math.abs(o1);
+			int second_abs = Math.abs(o2);
+			
+			if(first_abs == second_abs) {
+				return o1 > o2 ? 1 : -1;
+			}else {
+				return first_abs - second_abs;
+			}
+					
+		});
 		
-		String sNum = sc.next();
-		
-		char[] cNum = sNum.toCharArray();
-		//int 형 변수 sum 선언
-		int sum = 0;
-		for(var i=0; i<cNum.length; i++) {
-			//cNum[i]를 정수형으로 변환하면서 sum에 더하여 누적하기
-			sum += cNum[i] - '0';
+		for(int i = 0; i<N; i++) {
+			int request = Integer.parseInt(br.readLine());
+			if(request == 0) {
+				if(MyQueue.isEmpty()) {
+					System.out.println("0");
+				}else {
+					System.out.println(MyQueue.poll());
+				}
+			}else {
+				MyQueue.add(request);
+			}
 		}
-
-		System.out.println(sum);
 	}
 
 }
+
