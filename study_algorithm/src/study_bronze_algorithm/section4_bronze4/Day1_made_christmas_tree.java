@@ -2,7 +2,7 @@ package study_bronze_algorithm.section4_bronze4;
 
 import java.util.Scanner;
 
-public class Day1_2439 {
+public class Day1_made_christmas_tree {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
