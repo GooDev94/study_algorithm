@@ -1,4 +1,4 @@
-package study_bronze_algorithm.section4_bronze4;
+package study_bronze_algorithm.section5_bronze4;
 
 import java.util.Arrays;
 import java.util.Scanner;
