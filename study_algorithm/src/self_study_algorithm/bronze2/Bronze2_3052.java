@@ -11,12 +11,16 @@ public class Bronze2_3052 {
 		for(int i=0; i<10; i++) {
 			int num = sc.nextInt();
 			for(int j=0; j<arr.length; j++) {
-			
-				if(num%42== j) {
-					arr[j]++;
+				if(num%42 !=0 ) {
+					if(num%42== j) {
+						arr[j]++;
+						
+					}
 					
+				}else {
+					arr[0]++;
 				}
-			
+				
 			}
 		}
 		
