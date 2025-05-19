@@ -42,10 +42,12 @@ public class String_12 {
 		Scanner sc = new Scanner(System.in);
 		int cnt = sc.nextInt();
 		String txt = sc.next();
+		String answer = "";
 		
-		String[] arr = new String[cnt];
+//		String[] arr = new String[cnt];
 		for(int i=0; i<cnt; i++) {
-			// 0 1 2 3 (0, 7)(7, 14),(14, 21), (21, 28)
+			/* 0 1 2 3 (0, 7)(7, 14),(14, 21), (21, 28)
+			 * My Solution : for문을 다시 돌리는 방법을 진행함 (시간 복잡도가 높아질 우려가 있음)
 			arr[i] = txt.substring(i*7, (i+1)*7);
 			
 			String answer = "";
@@ -55,9 +57,16 @@ public class String_12 {
 						
 			}
 			
-			System.out.print( (char) Integer.parseInt(answer,2));
+			System.out.print( (char) Integer.parseInt(answer,2));	//2진수 -> 10진수
+			*/
+			String tmp = txt.substring(0, 7).replace('#', '1').replace('*', '0');
+			int num = Integer.parseInt(tmp, 2);		//2진수 -> 10진수
+			answer += (char) num;
+			txt = txt.substring(7);		//일곱개씩 잘라줌
+			
 		}
 
+		System.out.println(answer);
 	}
 
 }
