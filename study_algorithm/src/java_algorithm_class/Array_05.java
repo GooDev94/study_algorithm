@@ -39,6 +39,9 @@ public class Array_05 {
 		for(int i=2; i<=num; i++) {
 			if(arr[i] == 0) {
 				answer++;
+				
+				//i의 배수들을 체크하기 위함
+				//num까지 돌아야하기 때문에 <= 사용
 				for(int j=i; j<=num; j=j+i) arr[j]=1;
 			}
 		}
